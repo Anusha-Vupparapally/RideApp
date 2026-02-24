@@ -94,7 +94,6 @@ fun MapScreen(
                 .align(Alignment.Center)
         )
 
-        // 🔵 TOP pickup bar
         Column(
             modifier = Modifier
                 .fillMaxWidth()
