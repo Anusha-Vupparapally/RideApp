@@ -7,6 +7,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AddLocationAlt
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.*
@@ -141,13 +142,23 @@ fun DropScreen(
                 .align(Alignment.BottomCenter)
                 .imePadding()
                 .padding(20.dp),
-          shape = RoundedCornerShape(8.dp),
+            shape = RoundedCornerShape(8.dp),
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color(0xFF3B87E3),
                 contentColor = Color.White
             )
         ) {
-            Text("Select from map")
+            Row(verticalAlignment = Alignment.CenterVertically) {
+
+                Icon(
+                    imageVector = Icons.Default.AddLocationAlt,
+                    contentDescription = null,
+                    tint = Color.White
+                )
+
+                Spacer(modifier = Modifier.width(8.dp))
+                Text("Select from map")
+            }
         }
     }
 }
