@@ -77,7 +77,30 @@ fun DropScreen(
 
                     Column {
                         Text("Pickup", color = Color(color = 0xFF097A0E))
-                        Text(viewModel.pickup.value)
+                        var pickupText by remember {
+                            mutableStateOf(viewModel.pickup.value)
+                        }
+
+                        Column(modifier = Modifier.fillMaxWidth()) {
+
+                            Spacer(modifier = Modifier.height(4.dp))
+
+                            BasicTextField(
+                                value = pickupText,
+                                onValueChange = {
+                                    pickupText = it
+                                    viewModel.pickup.value = it
+                                },
+                                modifier = Modifier.fillMaxWidth(),
+                                textStyle = LocalTextStyle.current.copy(color = Color.Black),
+                                cursorBrush = SolidColor(Color.Black)
+                            ) {
+                                if (pickupText.isEmpty()) {
+                                    Text("Enter pickup", color = Color.Gray)
+                                }
+                                it()
+                            }
+                        }
                     }
                 }
             }

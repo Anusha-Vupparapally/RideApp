@@ -105,8 +105,11 @@ fun MapScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 16.dp)
-                    .shadow(8.dp, RoundedCornerShape(12.dp)),
-                shape = RoundedCornerShape(12.dp)
+                    .shadow(8.dp, RoundedCornerShape(12.dp))
+                    .clickable {
+                        navController.navigate("drop")
+                    },
+
             ) {
 
                 Row(
@@ -165,9 +168,14 @@ fun MapScreen(
             }
         }
 
-        Box(
-            modifier = Modifier.fillMaxSize(),
-            contentAlignment = Alignment.BottomCenter
+        Column(
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .fillMaxWidth()
+                .navigationBarsPadding()   // nav bar paina undadaniki
+                .imePadding()              // keyboard open ayithe move avvadanki
+                .padding(horizontal = 16.dp)
+                .padding(bottom = 10.dp)
         ) {
 
             Card(

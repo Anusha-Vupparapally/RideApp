@@ -5,3 +5,4 @@ data class LocationModel(
     val lng: Double,
     val address: String
 )
+
